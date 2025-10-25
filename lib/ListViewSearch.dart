@@ -73,7 +73,6 @@ class ListViewSearch extends StatelessWidget {
       routes: {
 
         'HomeScreen': (context)=>HomeScreen(),
-        'ContactNumber': (context)=>ContactNumber(),
         'WelcomeScreen': (context)=>WelcomeScreen(),
         'HomePage': (context)=>HomePage(),
         'ContactList': (context)=>ContactCard(name: 'Faisal', phoneNumber: '+8801912697055',),
