@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -22,6 +24,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   final List<Map<String, dynamic>> _allUsers = [
+    {"id": 1, "name": "Faisal", "age": 008801912697066},
     {"id": 2, "name": "Nasim", "age": 40},
     {"id": 3, "name": "Rakib", "age": 5},
     {"id": 4, "name": "Noor", "age": 35},
@@ -55,13 +58,21 @@ class _HomePageState extends State<HomePage> {
           .toList();
       // we use the toLowerCase() method to make it case-insensitive
     }
+    setState(() {
+      _foundUsers =results;
+    });
 
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey,
+      appBar: AppBar(
         backgroundColor: Colors.grey,
+        title: const Text('Search Contact',
+        
+        style: TextStyle(fontWeight: FontWeight.bold),),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),
@@ -84,6 +95,7 @@ class _HomePageState extends State<HomePage> {
                 itemCount: _foundUsers.length,
                 itemBuilder: (context, index) => Card(
                   key: ValueKey(_foundUsers[index]["id"]),
+                  color: Colors.grey,shadowColor: Colors.black,
                   elevation: 4,
                   margin: const EdgeInsets.symmetric(vertical: 10),
                   child: ListTile(
@@ -95,6 +107,8 @@ class _HomePageState extends State<HomePage> {
                         color:Colors.black
                     )),
                     subtitle: Text(
+                        '${_foundUsers[index]["age"]} Number',style:TextStyle(
+                        color:Colors.black
                     )),
                   ),
                 ),

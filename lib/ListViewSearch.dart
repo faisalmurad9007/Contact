@@ -6,6 +6,7 @@ import 'contactcard.dart';
 import 'contactlist.dart';
 import 'HScreen.dart';
 import 'Wscreen.dart';
+import 'myhomepage.dart';
 
 class ListViewSearch extends StatelessWidget {
   const ListViewSearch({super.key});
@@ -69,12 +70,13 @@ class ListViewSearch extends StatelessWidget {
       ),
       title: 'List View Search',
       home: ThemeTest(),
-      initialRoute: 'HomePage',
+      initialRoute: 'MyHomePage',
       routes: {
 
         'HomeScreen': (context)=>HomeScreen(),
         'WelcomeScreen': (context)=>WelcomeScreen(),
-        'HomePage': (context)=>HomePage(),
+        'HomePage': (context)=>HomePage2(),
+        'MyHomePage': (context)=>HomePage(),
         'ContactList': (context)=>ContactCard(name: 'Faisal', phoneNumber: '+8801912697055',),
 
       },
